@@ -1,0 +1,543 @@
+{
+  "source_file": "C:/Users/vlaweirna/Desktop/ExamenSeguridad/Unidad II - Seguridad en la Infraestructura de Red.pdf",
+  "pages_or_units_read": {
+    "pdf_pages": "1-44",
+    "page_count": 44,
+    "coverage": "Documento completo",
+    "units": [
+      "01 Ética Informática y Conceptos",
+      "02 Aspectos Legales",
+      "03 Herramientas para la Capacitación Continua",
+      "04 Agrupaciones Latinoamericanas de Hacking Ético"
+    ],
+    "page_reference_note": "Las referencias [p. N] de este JSON corresponden a la página física N del PDF; la numeración impresa de las diapositivas no coincide siempre con ella."
+  },
+  "correct_index_base": 0,
+  "extraction_issues": [
+    "El PDF tiene una capa de texto utilizable en las 44 páginas; no fue necesario aplicar OCR.",
+    "Algunas tablas y columnas se extraen en orden lineal y ciertos encabezados se fragmentan (por ejemplo, MX aparece como M/X), pero el contenido se reconstruyó mediante bloques con coordenadas.",
+    "La numeración impresa comienza en 4 en la tercera página física y salta de 38 a 42 entre las páginas físicas 37 y 39; por eso se usan páginas físicas para la trazabilidad.",
+    "No se consultaron ni incorporaron fuentes externas; afirmaciones, respuestas y explicaciones reproducen exclusivamente lo expuesto en el PDF."
+  ],
+  "sections": [
+    {
+      "name": "01. Ética informática: definición, relevancia y principios",
+      "concepts": [
+        "Ética informática: rama de la ética aplicada que estudia el impacto social y moral de las tecnologías de la información y los principios de conducta de quienes las diseñan, administran y usan [p. 3].",
+        "Vacío de políticas, poder informacional, doble uso y reputación profesional como razones de su importancia para ISC [p. 4].",
+        "Principios de confidencialidad, integridad y honestidad, legalidad, responsabilidad social, competencia profesional y respeto a la propiedad [p. 5].",
+        "ACM Code of Ethics y código de ética del ISC como referentes de conducta [p. 6].",
+        "Divulgación responsable, acceso incidental a datos, presión organizacional y herramientas de doble uso como dilemas frecuentes [p. 7]."
+      ],
+      "details": [
+        "La tecnología amplifica el alcance de decisiones, errores y abusos técnicos, que pueden afectar a miles de personas en segundos [p. 4].",
+        "La ética cubre provisionalmente vacíos mientras la legislación alcanza al cambio tecnológico [p. 4].",
+        "Administrar sistemas implica acceso a datos sensibles y una obligación de responsabilidad por la confianza depositada [p. 4].",
+        "Confidencialidad exige no divulgar información sin autorización; integridad y honestidad prohíben manipular datos, resultados o informes; legalidad obliga a actuar dentro del marco nacional e internacional [p. 5].",
+        "Responsabilidad social exige anticipar impactos y minimizar daños; competencia profesional implica mantenerse actualizado y rechazar tareas que excedan la capacidad técnica; respeto a la propiedad exige reconocer autoría, licencias y propiedad intelectual [p. 5].",
+        "El referente ACM pide bienestar humano, evitar daños, honestidad, confiabilidad, privacidad y confidencialidad [p. 6].",
+        "El código del ISC pide proteger sociedad, bien común e infraestructura; actuar honorable, justa y legalmente; servir con diligencia y competencia; y proteger la profesión [p. 6]."
+      ],
+      "commands_or_examples": [
+        "Hallazgo de vulnerabilidad crítica: decidir entre divulgar de inmediato, esperar el parche o callar; el PDF lo presenta como base de la divulgación responsable [p. 7].",
+        "Durante una auditoría se descubre información personal sensible no solicitada: se plantea si reportarla, ignorarla o explotarla [p. 7].",
+        "Un jefe pide omitir un hallazgo para no retrasar un lanzamiento, generando tensión entre lealtad organizacional y ética profesional [p. 7].",
+        "Un script de explotación de investigación se filtra y se cuestiona la responsabilidad por su uso posterior [p. 7]."
+      ],
+      "contradictions_or_ambiguities": [
+        "Los dilemas de la página 7 se formulan como preguntas y el PDF no fija una solución única ni un protocolo operativo.",
+        "La expresión 'código de ética del ISC' no se desarrolla con el nombre completo de una organización concreta dentro del PDF."
+      ]
+    },
+    {
+      "name": "02. Derecho informático, Artículo 16 y entorno laboral",
+      "concepts": [
+        "La seguridad informática comprende preservación, respeto y buen manejo de información en dispositivos, redes y procesos, no solo en Internet [p. 9].",
+        "La falta de licencias se vincula con la LFDA y el Código Penal Federal; la responsabilidad del personal con la LFT y las AUP; la revelación de secretos con el CPF; y los secretos industriales y datos personales con convenios y códigos estatales [p. 10].",
+        "Artículo 16 constitucional: protección frente a molestias sin mandamiento escrito de autoridad competente [p. 11].",
+        "Privacidad de comunicaciones, protección de datos personales, domicilio digital y autorización judicial para intervenir comunicaciones [p. 12].",
+        "Derechos digitales del trabajador y obligaciones de información, proporcionalidad y protección de datos para el empleador [pp. 13-14]."
+      ],
+      "details": [
+        "Correos, mensajes y llamadas están protegidos; su intervención requiere orden judicial [p. 12].",
+        "Los datos en computadoras, smartphones y servidores tienen protección constitucional [p. 12].",
+        "El PDF extiende el domicilio a espacios virtuales privados y considera inconstitucionales los accesos sin autorización [p. 12].",
+        "El monitoreo de redes y la interceptación de datos privados requieren mandamiento escrito [p. 12].",
+        "El trabajador conserva privacidad en comunicaciones personales incluso al usar equipos empresariales, no debe ser vigilado desproporcionadamente o sin aviso, y requiere consentimiento previo para acceder a dispositivos personales [pp. 13-14].",
+        "También se señalan protección de datos biométricos o de ubicación y derecho a desconexión fuera del horario laboral [p. 14].",
+        "El empleador debe informar el monitoreo, no acceder a correos o archivos personales sin orden judicial, establecer AUP claras, proteger datos conforme a LFPDPPP y no usar vigilancia encubierta [p. 14]."
+      ],
+      "commands_or_examples": [
+        "AUP se presenta como política interna de uso aceptable para responsabilizar al personal y regular tecnología en el trabajo [pp. 10, 14]."
+      ],
+      "contradictions_or_ambiguities": [
+        "El PDF afirma de manera general que no se puede acceder a correos o archivos personales sin orden judicial, pero no desarrolla excepciones, alcance jurisdiccional ni condiciones de equipos corporativos [p. 14]."
+      ]
+    },
+    {
+      "name": "03. Ley Olimpia y violencia digital",
+      "concepts": [
+        "Ley Olimpia como reforma que tipifica violencia digital y sanciona difusión no consentida de imágenes, videos o audios íntimos [p. 15].",
+        "Origen en Olimpia Coral Melo; primera aprobación en Puebla en 2018; extensión federal y referencia latinoamericana [p. 15].",
+        "Conductas: difusión de imágenes íntimas, acoso digital, suplantación de identidad digital y ciberacoso con fines de control [p. 16]."
+      ],
+      "details": [
+        "El PDF indica adopción en más de 30 estados de México [p. 15].",
+        "Difusión íntima: publicar o compartir contenido sexual o íntimo sin consentimiento; pena indicada de 3 a 6 años [p. 16].",
+        "Acoso digital: hostigamiento, amenazas o intimidación por medios electrónicos o redes; pena indicada de 1 a 3 años [p. 16].",
+        "Suplantación digital: crear perfiles falsos o acceder a cuentas ajenas para dañar imagen o reputación; pena indicada de 2 a 4 años [p. 16].",
+        "Ciberacoso de control: usar tecnología para vigilar, controlar o intimidar, especialmente en violencia de género; pena indicada de 2 a 5 años [p. 16]."
+      ],
+      "commands_or_examples": [],
+      "contradictions_or_ambiguities": [
+        "Las penas de la página 16 no se vinculan allí con artículos o jurisdicciones específicas, por lo que el PDF no permite determinar su ámbito exacto.",
+        "La suplantación digital aparece con 2 a 4 años en la página 16, mientras el Art. 181-A posterior indica pena base de 4 a 12 años [p. 24]; podrían ser marcos distintos, pero el PDF no explica la relación."
+      ]
+    },
+    {
+      "name": "04. Código Penal: privacidad sexual y protección de menores",
+      "concepts": [
+        "Título Séptimo Bis: indemnidad y privacidad sexual [p. 19].",
+        "Título Octavo: libre desarrollo de la personalidad, con corrupción de menores, pornografía infantil y grooming [p. 20].",
+        "Obtención ilícita, difusión no consensuada, sextorsión y agravantes [p. 19]."
+      ],
+      "details": [
+        "Art. 199 Octies: obtener, grabar o registrar imágenes o videos sexuales sin consentimiento por cualquier medio digital; 3 a 6 años [p. 19].",
+        "Art. 199 Novies: publicar, transmitir, vender o compartir material sexual sin consentimiento por medio tecnológico; 5 a 10 años [p. 19].",
+        "Art. 199 Decies: amenazar con difundir material sexual para obtener beneficio económico, sexual o de otra índole; 6 a 12 años [p. 19].",
+        "La pena aumenta hasta en una mitad si la víctima es menor, existe relación de confianza o hubo distribución masiva [p. 19].",
+        "Art. 200: inducir, facilitar u obligar a menores a actos sexuales mediante medios electrónicos; 5 a 10 años [p. 20].",
+        "Art. 202: producir, distribuir o poseer material con menores, incluidas imágenes generadas con IA; 7 a 12 años [p. 20].",
+        "Art. 209 Bis: contactar, seducir o engañar digitalmente a un menor con fines sexuales; 3 a 8 años [p. 20]."
+      ],
+      "commands_or_examples": [
+        "Caso de sextorsión: amenaza de publicar fotos íntimas obtenidas de un teléfono si la víctima no paga $5,000; el PDF pregunta por delitos concurrentes y lugar de denuncia [p. 26]."
+      ],
+      "contradictions_or_ambiguities": [
+        "El caso práctico pregunta dónde denunciar, pero el PDF no ofrece la respuesta [p. 26].",
+        "El documento no explica cómo se coordinan en un caso concreto los artículos federales, la Ley Olimpia y los artículos 181-A/181-B expuestos después."
+      ]
+    },
+    {
+      "name": "05. Secretos, acceso ilícito, suplantación e intimidad",
+      "concepts": [
+        "Título Noveno: revelación de secretos y acceso ilícito a sistemas [p. 21].",
+        "Art. 181: acceso informático indebido e interferencia del funcionamiento de sistemas o programas [p. 23].",
+        "Art. 181-A: suplantación de identidad con datos personales sin consentimiento y fines ilícitos o lucrativos [p. 24].",
+        "Art. 181-B: violación a la intimidad personal mediante difusión o amenaza de difusión no autorizada [p. 25]."
+      ],
+      "details": [
+        "Art. 210: revelar secretos conocidos por empleo o cargo, 1 a 5 años; Art. 211: revelación en perjuicio de otro, hasta 4 años más inhabilitación; Art. 211 bis: secretos de empresa y propiedad intelectual digital [p. 21].",
+        "Art. 211 bis 1: acceso no autorizado, 6 meses a 2 años y hasta 4 con daño; bis 2: sector financiero, 1 a 4 años; bis 3/4: modificación o destrucción de datos, hasta 8 años [p. 21].",
+        "Art. 211 bis 5/6: herramientas de intrusión e interceptación, hasta 6 años; bis 7: funcionario público, doble de la pena [p. 21].",
+        "Art. 181 incluye acceder sin autorización a información de dispositivos de procesamiento o almacenamiento e interferir un sistema operativo o programa [p. 23].",
+        "Art. 181: caso general 3 a 6 meses y 150 a 300 días multa; responsable de mantenimiento/seguridad 2 a 6 meses y 300 a 600 días; con difusión íntima, 1 a 3 años y 300 a 600 días [p. 23].",
+        "Art. 181-A: pena base de 4 a 12 años, 200 a 500 días multa y reparación total; aumenta hasta la mitad si se usa la profesión, se es servidor público o se trabaja en institución crediticia [p. 24].",
+        "Art. 181-B: 1 a 4 años, 300 a 600 días multa y reparación de daños [p. 25]."
+      ],
+      "commands_or_examples": [
+        "Empleado de TI accede sin autorización a correos del director para copiar información confidencial; el PDF pide identificar la ley y si cambia la pena [p. 26].",
+        "Perfil falso de una ex pareja usa fotos y datos para pedir dinero a amigos; el PDF plantea agravantes y delitos concurrentes [p. 26]."
+      ],
+      "contradictions_or_ambiguities": [
+        "La página 17 atribuye al Art. 211 bis 1 una pena máxima de 8 años y al Art. 211 bis 7 una máxima de 12 años; la página 21 asigna a bis 1 entre 6 meses y 2 años (hasta 4 con daño), reserva hasta 8 años para bis 3/4 y define bis 7 como duplicación. Es una contradicción interna sustantiva.",
+        "En Art. 181, el rango de prisión mostrado para el responsable de mantenimiento/seguridad (2 a 6 meses) inicia por debajo del caso general (3 a 6 meses), aunque la multa es mayor; el PDF no explica si es error o régimen específico [p. 23].",
+        "El PDF no identifica explícitamente el código o jurisdicción de los artículos 181, 181-A y 181-B ni resuelve las preguntas de concurrencia de delitos [pp. 23-26]."
+      ]
+    },
+    {
+      "name": "06. Ley Federal del Derecho de Autor, software y bases de datos",
+      "concepts": [
+        "LFDA promulgada el 24 de diciembre de 1996, vigente desde 1997 y con reforma relevante en 2020 [p. 27].",
+        "Objetivo de proteger obras y derechos de autor en ámbitos literario, artístico, científico y digital; INDAUTOR como órgano rector [p. 27].",
+        "Derechos morales frente a patrimoniales [p. 28].",
+        "Protección de programas de cómputo, bases de datos originales y copias de respaldo [p. 29].",
+        "Infracciones administrativas, delitos penales, medidas tecnológicas y daños civiles [p. 30]."
+      ],
+      "details": [
+        "Derechos morales (Arts. 21-23): irrenunciables e inalienables; paternidad, integridad y divulgación; permanecen después de la muerte [p. 28].",
+        "Derechos patrimoniales (Arts. 24-28): transmisibles, licenciables o heredables; abarcan reproducción, distribución, comunicación pública y transformación; duran vida del autor más 100 años [p. 28].",
+        "Art. 101: los programas se protegen como obras literarias; se protege la expresión en código fuente y objeto, no la idea [p. 29].",
+        "Art. 107: las bases originales se protegen como compilaciones si existe selección o disposición creativa [p. 29].",
+        "El titular legítimo puede hacer una copia de respaldo como resguardo sin infringir la ley [p. 29].",
+        "INDAUTOR puede imponer de 500 a 10,000 días de salario mínimo, clausura y decomiso; Art. 424: reproducción no autorizada, 6 meses a 6 años; Art. 426: piratería informática, hasta 10 años [p. 30].",
+        "Eludir DRM o cifrados agrava la pena; el titular puede exigir reparación civil no inferior al 40% del precio público del producto o servicio [p. 30]."
+      ],
+      "commands_or_examples": [
+        "Instalar 500 copias con una licencia se presenta como infracción administrativa y penal para el representante legal [p. 31].",
+        "Extraer masivamente una base protegida para un competidor puede infringir la LFDA aunque los datos individuales sean públicos [p. 31]."
+      ],
+      "contradictions_or_ambiguities": [
+        "El PDF no define el criterio práctico de 'selección o disposición creativa' ni los límites cuantitativos para que el scraping sea masivo [pp. 29, 31]."
+      ]
+    },
+    {
+      "name": "07. Convenio de Budapest",
+      "concepts": [
+        "Convenio sobre la Ciberdelincuencia del Consejo de Europa, ETS 185, adoptado el 23 de noviembre de 2001 [p. 32].",
+        "Primer tratado internacional vinculante sobre delitos informáticos, vigente desde el 1 de julio de 2004 [p. 32].",
+        "Armonización legislativa y cooperación internacional para investigar y sancionar ciberdelincuencia [p. 32].",
+        "Delitos de los Arts. 2-10 y responsabilidad de Arts. 11-13 [p. 33].",
+        "Adopción global y situación de México [p. 34]."
+      ],
+      "details": [
+        "Arts. 2-6: acceso ilícito, interceptación ilícita, interferencia de datos, interferencia de sistemas y mal uso de dispositivos [p. 33].",
+        "Arts. 7-10: falsificación informática, fraude informático, pornografía infantil e infracciones de propiedad intelectual [p. 33].",
+        "Arts. 11-13: tentativa, complicidad y responsabilidad corporativa [p. 33].",
+        "El PDF indica 68 ratificaciones en 2025 e incluye EUA, Canadá, Japón, Brasil, Colombia, Chile y la mayoría de la UE [p. 34].",
+        "Según el PDF, México no lo ha ratificado; fue invitado a adherirse y el proceso legislativo sigue pendiente [p. 34]."
+      ],
+      "commands_or_examples": [
+        "Art. 5 se ejemplifica con DoS/DDoS; Art. 6 con malware y herramientas de ataque; Art. 7 con phishing documental; Art. 8 con estafas en línea [p. 33]."
+      ],
+      "contradictions_or_ambiguities": [
+        "La cifra de 68 ratificaciones está fechada en 2025 y el PDF no aporta fuente o fecha exacta de corte [p. 34]."
+      ]
+    },
+    {
+      "name": "08. Plataformas de capacitación práctica",
+      "concepts": [
+        "TryHackMe, Hack The Box, PortSwigger Web Security Academy, OverTheWire, VulnHub y LetsDefend/BTLO [p. 36]."
+      ],
+      "details": [
+        "TryHackMe ofrece rutas guiadas y laboratorios virtuales para principiantes y expertos [p. 36].",
+        "Hack The Box ofrece máquinas y retos realistas de pentesting [p. 36].",
+        "PortSwigger Web Security Academy ofrece formación gratuita y profunda en vulnerabilidades web y fue creada por autores de Burp Suite [p. 36].",
+        "OverTheWire usa wargames para Linux, redes y explotación por línea de comandos [p. 36].",
+        "VulnHub ofrece máquinas virtuales descargables e intencionalmente vulnerables para entornos propios [p. 36].",
+        "LetsDefend/BTLO simula un SOC para defensa, detección y respuesta a incidentes de Blue Team [p. 36]."
+      ],
+      "commands_or_examples": [
+        "No se incluyen comandos concretos; las plataformas se presentan como entornos de práctica [p. 36]."
+      ],
+      "contradictions_or_ambiguities": []
+    },
+    {
+      "name": "09. Certificaciones profesionales",
+      "concepts": [
+        "Security+, CEH, OSCP, CISSP, eJPT y CySA+ como certificaciones reconocidas [p. 37]."
+      ],
+      "details": [
+        "Security+ es una base internacional y punto de entrada a fundamentos [p. 37].",
+        "CEH acredita metodología ofensiva formal reconocida por la industria [p. 37].",
+        "OSCP se describe como examen 100% práctico de 24 horas y referente exigente para pentesters [p. 37].",
+        "CISSP se orienta a gestión y arquitectura para perfiles senior y gerenciales [p. 37].",
+        "eJPT es una entrada práctica accesible para estudiantes de pentesting [p. 37].",
+        "CySA+ se enfoca en análisis de amenazas y respuesta a incidentes desde un SOC [p. 37]."
+      ],
+      "commands_or_examples": [],
+      "contradictions_or_ambiguities": []
+    },
+    {
+      "name": "10. Historia y agrupaciones de hacking ético en LATAM",
+      "concepts": [
+        "Cronología 2001-2024 de eventos y políticas regionales [p. 39].",
+        "DragonJAR en Colombia y Ekoparty en Argentina [pp. 40-41].",
+        "OWASP LATAM, HackLabMX, Clan Jaguar y WoSec México [p. 42]."
+      ],
+      "details": [
+        "2001: nace Ekoparty en Buenos Aires; 2004: Jaime Restrepo lanza DragonJAR.com; 2012: DragonJAR SAS se formaliza; 2013: primera DragonJAR Security Conference [p. 39].",
+        "2017: México publica su Estrategia Nacional de Ciberseguridad; 2024: Chile es presentado como primer país de LATAM con Agencia Nacional de Ciberseguridad [p. 39].",
+        "DragonJAR fue fundada por Jaime Andrés Restrepo, alias DragoN; tiene alcance hispanoamericano, consultoría desde 2012, conferencia anual desde 2013 y distinción de Community Supporter de OWASP LATAM Tour [p. 40].",
+        "DragonJAR publica noticias, herramientas y writeups; imparte talleres; hace pruebas de intrusión; y organiza DragonJARCON [p. 40].",
+        "Ekoparty nació en Buenos Aires en 2001, supera 20 años y 10,000 asistentes anuales, y reúne investigadores y profesionales [p. 41].",
+        "Ekoparty realiza tres días de CTF, wardriving, live hacking, talleres, charlas y OWASP Village [p. 41].",
+        "OWASP LATAM tiene capítulos en Colombia, México, Argentina, Brasil, Perú y Chile y enfoca su tour en seguridad web [p. 42].",
+        "HackLabMX promueve educación; Clan Jaguar reúne entusiastas; WoSec México impulsa a mujeres, diversidad e inclusión mediante mentorías y eventos [p. 42]."
+      ],
+      "commands_or_examples": [
+        "Actividades citadas: CTF, wardriving, live hacking, writeups de pentesting, talleres y consultoría [pp. 40-41]."
+      ],
+      "contradictions_or_ambiguities": [
+        "DragonJAR se fecha como lanzamiento en 2004 en la cronología y como 'sitio personal ~2004' en su ficha; la aproximación no fija una fecha exacta [pp. 39-40]."
+      ]
+    },
+    {
+      "name": "11. Marco legal, retos y oportunidades de ciberseguridad en LATAM",
+      "concepts": [
+        "Comparación de Colombia, México, Argentina, Brasil y Chile [p. 43].",
+        "Armonización legal desigual y relevancia de cooperación internacional [p. 43].",
+        "Escasez de talento, legislación desactualizada, falta de conciencia empresarial y crecimiento laboral [p. 44]."
+      ],
+      "details": [
+        "Colombia se clasifica avanzada: Ley 1273/2009, Ley 1581/2012 y proyecto de 2025 para fortalecer MinTIC [p. 43].",
+        "México se clasifica en desarrollo: CPF Art. 211 bis, LFPDPPP, Estrategia Nacional 2017 y proyecto federal pendiente [p. 43].",
+        "Argentina se clasifica progresando: decretos 577/2017, 50/2019 y 941/2025 [p. 43].",
+        "Brasil se clasifica avanzado: LGPD 2020 y Marco Civil da Internet [p. 43].",
+        "Chile se clasifica pionero: Ley Marco de Ciberseguridad 2024 y Agencia Nacional de Ciberseguridad, ANCI [p. 43].",
+        "La armonización avanza desigualmente y Budapest se considera clave para cooperación [p. 43].",
+        "Hay pocos profesionales con CEH, OSCP o CISSP frente a la demanda; varios países carecen de leyes específicas [p. 44].",
+        "El PDF afirma que las PyMEs subestiman la ciberseguridad y son víctimas principales de ransomware y phishing [p. 44].",
+        "La alta tasa de ataques aumenta demanda de hackers éticos, consultores y formadores [p. 44]."
+      ],
+      "commands_or_examples": [],
+      "contradictions_or_ambiguities": [
+        "Las categorías 'avanzado', 'en desarrollo', 'progresando' y 'pionero' no incluyen una metodología comparativa explícita [p. 43].",
+        "La afirmación de que Chile es el único país con Agencia Nacional en 2024 no incluye criterios sobre qué entidades equivalentes cuentan como agencia [p. 44]."
+      ]
+    }
+  ],
+  "candidate_questions": [
+    {
+      "type": "multiple",
+      "difficulty": "easy",
+      "topic": "Código deontológico",
+      "section": "01. Ética informática: definición, relevancia y principios",
+      "prompt": "¿Qué principio exige no aceptar tareas que rebasen la propia capacidad técnica?",
+      "options": ["Confidencialidad", "Competencia profesional", "Legalidad", "Responsabilidad social"],
+      "correct": 1,
+      "explanation": "El PDF define competencia profesional como mantenerse actualizado y no aceptar tareas que excedan la capacidad técnica [p. 5].",
+      "source_file": "C:/Users/vlaweirna/Desktop/ExamenSeguridad/Unidad II - Seguridad en la Infraestructura de Red.pdf"
+    },
+    {
+      "type": "true_false",
+      "difficulty": "easy",
+      "topic": "Doble uso",
+      "section": "01. Ética informática: definición, relevancia y principios",
+      "prompt": "Las mismas técnicas de un pentester pueden servir tanto para proteger como para atacar.",
+      "correct": true,
+      "explanation": "El doble uso se presenta como razón por la cual la ética marca la diferencia entre protección y ataque [p. 4].",
+      "source_file": "C:/Users/vlaweirna/Desktop/ExamenSeguridad/Unidad II - Seguridad en la Infraestructura de Red.pdf"
+    },
+    {
+      "type": "open",
+      "difficulty": "medium",
+      "topic": "Dilemas éticos",
+      "section": "01. Ética informática: definición, relevancia y principios",
+      "prompt": "Enumera los cuatro dilemas éticos frecuentes en TI que presenta el documento.",
+      "key_points": [
+        "Hallazgo de una vulnerabilidad crítica y divulgación responsable.",
+        "Acceso incidental a datos ajenos durante una auditoría.",
+        "Presión organizacional para omitir un hallazgo.",
+        "Responsabilidad por herramientas de doble uso filtradas."
+      ],
+      "explanation": "Los cuatro dilemas aparecen reunidos en la página 7 del PDF.",
+      "source_file": "C:/Users/vlaweirna/Desktop/ExamenSeguridad/Unidad II - Seguridad en la Infraestructura de Red.pdf"
+    },
+    {
+      "type": "multiple",
+      "difficulty": "easy",
+      "topic": "Artículo 16",
+      "section": "02. Derecho informático, Artículo 16 y entorno laboral",
+      "prompt": "Según el PDF, ¿qué se requiere para intervenir correos, mensajes o llamadas privadas?",
+      "options": ["Una política AUP", "Una certificación profesional", "Una orden judicial o mandamiento escrito", "La autorización del administrador de red"],
+      "correct": 2,
+      "explanation": "El Artículo 16 digital exige autorización judicial o mandamiento escrito para intervenir comunicaciones privadas [p. 12].",
+      "source_file": "C:/Users/vlaweirna/Desktop/ExamenSeguridad/Unidad II - Seguridad en la Infraestructura de Red.pdf"
+    },
+    {
+      "type": "true_false",
+      "difficulty": "medium",
+      "topic": "Privacidad laboral",
+      "section": "02. Derecho informático, Artículo 16 y entorno laboral",
+      "prompt": "El documento sostiene que el trabajador conserva privacidad en sus comunicaciones personales aun cuando use equipos empresariales.",
+      "correct": true,
+      "explanation": "Ese derecho aparece expresamente en la tabla de derechos y obligaciones digitales de la LFT [p. 14].",
+      "source_file": "C:/Users/vlaweirna/Desktop/ExamenSeguridad/Unidad II - Seguridad en la Infraestructura de Red.pdf"
+    },
+    {
+      "type": "multiple",
+      "difficulty": "medium",
+      "topic": "Ley Olimpia",
+      "section": "03. Ley Olimpia y violencia digital",
+      "prompt": "¿Cuál conducta se describe como usar tecnología para vigilar, controlar o intimidar, especialmente en violencia de género?",
+      "options": ["Acoso digital", "Ciberacoso con fines de control", "Difusión de imágenes íntimas", "Suplantación de identidad digital"],
+      "correct": 1,
+      "explanation": "Esa es la definición de ciberacoso con fines de control en el cuadro de conductas sancionadas [p. 16].",
+      "source_file": "C:/Users/vlaweirna/Desktop/ExamenSeguridad/Unidad II - Seguridad en la Infraestructura de Red.pdf"
+    },
+    {
+      "type": "multiple",
+      "difficulty": "medium",
+      "topic": "Sextorsión",
+      "section": "04. Código Penal: privacidad sexual y protección de menores",
+      "prompt": "¿Qué artículo vincula el PDF con la sextorsión?",
+      "options": ["Art. 199 Octies", "Art. 199 Novies", "Art. 199 Decies", "Art. 202"],
+      "correct": 2,
+      "explanation": "El Art. 199 Decies sanciona amenazar con difundir material sexual para obtener un beneficio [p. 19].",
+      "source_file": "C:/Users/vlaweirna/Desktop/ExamenSeguridad/Unidad II - Seguridad en la Infraestructura de Red.pdf"
+    },
+    {
+      "type": "multiple",
+      "difficulty": "medium",
+      "topic": "Protección de menores",
+      "section": "04. Código Penal: privacidad sexual y protección de menores",
+      "prompt": "¿Qué conducta incluye expresamente material con menores generado mediante IA?",
+      "options": ["Grooming", "Pornografía infantil", "Corrupción de menores", "Sextorsión"],
+      "correct": 1,
+      "explanation": "El Art. 202 incluye producir, distribuir o poseer material con menores, incluidas imágenes generadas con IA [p. 20].",
+      "source_file": "C:/Users/vlaweirna/Desktop/ExamenSeguridad/Unidad II - Seguridad en la Infraestructura de Red.pdf"
+    },
+    {
+      "type": "multiple",
+      "difficulty": "hard",
+      "topic": "Acceso ilícito",
+      "section": "05. Secretos, acceso ilícito, suplantación e intimidad",
+      "prompt": "En el desglose del Título Noveno de la página 21, ¿qué artículos se asocian con modificación o destrucción de datos?",
+      "options": ["211 bis 1", "211 bis 2", "211 bis 3/4", "211 bis 5/6"],
+      "correct": 2,
+      "explanation": "La página 21 atribuye la modificación o destrucción de datos a los Arts. 211 bis 3/4 y señala hasta 8 años.",
+      "source_file": "C:/Users/vlaweirna/Desktop/ExamenSeguridad/Unidad II - Seguridad en la Infraestructura de Red.pdf"
+    },
+    {
+      "type": "open",
+      "difficulty": "hard",
+      "topic": "Suplantación de identidad",
+      "section": "05. Secretos, acceso ilícito, suplantación e intimidad",
+      "prompt": "Resume la conducta, pena base y supuestos de agravación del Art. 181-A según el documento.",
+      "key_points": [
+        "Usurpar o sustituir a otra persona usando sin consentimiento sus datos personales.",
+        "Finalidad ilícita o lucrativa, aunque no se consiga el resultado.",
+        "Pena base de 4 a 12 años, 200 a 500 días multa y reparación total.",
+        "Aumento de hasta la mitad si se usa la profesión, se es servidor público o se trabaja en institución crediticia."
+      ],
+      "explanation": "Todos los elementos proceden de la exposición del Art. 181-A [p. 24].",
+      "source_file": "C:/Users/vlaweirna/Desktop/ExamenSeguridad/Unidad II - Seguridad en la Infraestructura de Red.pdf"
+    },
+    {
+      "type": "multiple",
+      "difficulty": "medium",
+      "topic": "Intimidad personal",
+      "section": "05. Secretos, acceso ilícito, suplantación e intimidad",
+      "prompt": "¿Cuál es la sanción indicada para el Art. 181-B?",
+      "options": ["6 a 12 años sin multa", "1 a 4 años, 300 a 600 días multa y reparación de daños", "4 a 12 años y 200 a 500 días multa", "3 a 8 años y clausura"],
+      "correct": 1,
+      "explanation": "La página 25 indica 1 a 4 años, 300 a 600 días multa y reparación de daños.",
+      "source_file": "C:/Users/vlaweirna/Desktop/ExamenSeguridad/Unidad II - Seguridad en la Infraestructura de Red.pdf"
+    },
+    {
+      "type": "multiple",
+      "difficulty": "medium",
+      "topic": "Protección del software",
+      "section": "06. Ley Federal del Derecho de Autor, software y bases de datos",
+      "prompt": "Según el Art. 101 LFDA presentado en el PDF, ¿qué se protege de un programa de cómputo?",
+      "options": ["La idea abstracta", "Solo el nombre comercial", "La expresión en código fuente y objeto", "Cualquier algoritmo sin expresión"],
+      "correct": 2,
+      "explanation": "Los programas se protegen como obras literarias: no la idea, sino su expresión en código fuente y objeto [p. 29].",
+      "source_file": "C:/Users/vlaweirna/Desktop/ExamenSeguridad/Unidad II - Seguridad en la Infraestructura de Red.pdf"
+    },
+    {
+      "type": "true_false",
+      "difficulty": "medium",
+      "topic": "Bases de datos",
+      "section": "06. Ley Federal del Derecho de Autor, software y bases de datos",
+      "prompt": "Extraer masivamente para un competidor una base protegida puede infringir la LFDA aunque sus datos individuales sean públicos.",
+      "correct": true,
+      "explanation": "El documento usa exactamente ese supuesto como caso práctico de scraping [p. 31].",
+      "source_file": "C:/Users/vlaweirna/Desktop/ExamenSeguridad/Unidad II - Seguridad en la Infraestructura de Red.pdf"
+    },
+    {
+      "type": "multiple",
+      "difficulty": "medium",
+      "topic": "Derechos de autor",
+      "section": "06. Ley Federal del Derecho de Autor, software y bases de datos",
+      "prompt": "¿Cuál rasgo corresponde a los derechos patrimoniales?",
+      "options": ["Son inalienables", "Nunca pueden heredarse", "Pueden cederse, licenciarse o heredarse", "Solo comprenden la paternidad"],
+      "correct": 2,
+      "explanation": "Los derechos patrimoniales son transmisibles y pueden cederse, licenciarse o heredarse [p. 28].",
+      "source_file": "C:/Users/vlaweirna/Desktop/ExamenSeguridad/Unidad II - Seguridad en la Infraestructura de Red.pdf"
+    },
+    {
+      "type": "multiple",
+      "difficulty": "easy",
+      "topic": "Convenio de Budapest",
+      "section": "07. Convenio de Budapest",
+      "prompt": "¿Cuál es el objetivo principal del Convenio de Budapest según el PDF?",
+      "options": ["Certificar pentesters", "Armonizar leyes y facilitar cooperación internacional contra la ciberdelincuencia", "Regular únicamente derechos de autor", "Sustituir las constituciones nacionales"],
+      "correct": 1,
+      "explanation": "El objetivo declarado es armonizar legislaciones y facilitar cooperación para investigar y sancionar ciberdelincuencia [p. 32].",
+      "source_file": "C:/Users/vlaweirna/Desktop/ExamenSeguridad/Unidad II - Seguridad en la Infraestructura de Red.pdf"
+    },
+    {
+      "type": "multiple",
+      "difficulty": "medium",
+      "topic": "Delitos de Budapest",
+      "section": "07. Convenio de Budapest",
+      "prompt": "¿Qué tipifica el Art. 5 del Convenio en la síntesis del documento?",
+      "options": ["Acceso ilícito", "Interferencia de sistemas, como DoS/DDoS", "Fraude informático", "Propiedad intelectual"],
+      "correct": 1,
+      "explanation": "La lista asocia el Art. 5 con interferencia de sistemas y ejemplifica DoS/DDoS [p. 33].",
+      "source_file": "C:/Users/vlaweirna/Desktop/ExamenSeguridad/Unidad II - Seguridad en la Infraestructura de Red.pdf"
+    },
+    {
+      "type": "true_false",
+      "difficulty": "easy",
+      "topic": "Adopción de Budapest",
+      "section": "07. Convenio de Budapest",
+      "prompt": "Según el estado descrito en el PDF, México no había ratificado el Convenio de Budapest y su adhesión seguía pendiente.",
+      "correct": true,
+      "explanation": "La página 34 afirma que México no lo ha ratificado, aunque fue invitado a adherirse.",
+      "source_file": "C:/Users/vlaweirna/Desktop/ExamenSeguridad/Unidad II - Seguridad en la Infraestructura de Red.pdf"
+    },
+    {
+      "type": "multiple",
+      "difficulty": "easy",
+      "topic": "Capacitación Blue Team",
+      "section": "08. Plataformas de capacitación práctica",
+      "prompt": "¿Qué plataformas se presentan como simuladores de un SOC para defensa y respuesta a incidentes?",
+      "options": ["VulnHub", "OverTheWire", "LetsDefend / BTLO", "PortSwigger Academy"],
+      "correct": 2,
+      "explanation": "LetsDefend/BTLO se describe como simulación de un SOC real para Blue Team [p. 36].",
+      "source_file": "C:/Users/vlaweirna/Desktop/ExamenSeguridad/Unidad II - Seguridad en la Infraestructura de Red.pdf"
+    },
+    {
+      "type": "multiple",
+      "difficulty": "easy",
+      "topic": "Certificaciones",
+      "section": "09. Certificaciones profesionales",
+      "prompt": "¿Qué certificación se describe con un examen 100% práctico de 24 horas?",
+      "options": ["Security+", "CISSP", "OSCP", "CySA+"],
+      "correct": 2,
+      "explanation": "El PDF caracteriza así a OSCP [p. 37].",
+      "source_file": "C:/Users/vlaweirna/Desktop/ExamenSeguridad/Unidad II - Seguridad en la Infraestructura de Red.pdf"
+    },
+    {
+      "type": "multiple",
+      "difficulty": "medium",
+      "topic": "DragonJAR",
+      "section": "10. Historia y agrupaciones de hacking ético en LATAM",
+      "prompt": "¿En qué año sitúa el PDF la primera DragonJAR Security Conference?",
+      "options": ["2001", "2004", "2012", "2013"],
+      "correct": 3,
+      "explanation": "La cronología ubica la primera conferencia en 2013 [p. 39].",
+      "source_file": "C:/Users/vlaweirna/Desktop/ExamenSeguridad/Unidad II - Seguridad en la Infraestructura de Red.pdf"
+    },
+    {
+      "type": "multiple",
+      "difficulty": "medium",
+      "topic": "Comunidades LATAM",
+      "section": "10. Historia y agrupaciones de hacking ético en LATAM",
+      "prompt": "¿Qué comunidad se describe como impulsora de mujeres, diversidad e inclusión mediante mentorías y eventos?",
+      "options": ["Clan Jaguar", "HackLabMX", "WoSec México", "DragonJAR"],
+      "correct": 2,
+      "explanation": "La ficha de WoSec México incluye ese propósito [p. 42].",
+      "source_file": "C:/Users/vlaweirna/Desktop/ExamenSeguridad/Unidad II - Seguridad en la Infraestructura de Red.pdf"
+    },
+    {
+      "type": "multiple",
+      "difficulty": "medium",
+      "topic": "Marco legal LATAM",
+      "section": "11. Marco legal, retos y oportunidades de ciberseguridad en LATAM",
+      "prompt": "¿Qué país se clasifica como pionero de LATAM por su Ley Marco de Ciberseguridad de 2024 y la ANCI?",
+      "options": ["Colombia", "México", "Argentina", "Chile"],
+      "correct": 3,
+      "explanation": "La comparación regional atribuye esa condición a Chile [p. 43].",
+      "source_file": "C:/Users/vlaweirna/Desktop/ExamenSeguridad/Unidad II - Seguridad en la Infraestructura de Red.pdf"
+    },
+    {
+      "type": "open",
+      "difficulty": "medium",
+      "topic": "Retos regionales",
+      "section": "11. Marco legal, retos y oportunidades de ciberseguridad en LATAM",
+      "prompt": "Explica los tres retos y la oportunidad regional que enumera el documento.",
+      "key_points": [
+        "Escasez de profesionales con certificaciones internacionales frente a la demanda.",
+        "Legislación desactualizada o ausencia de leyes específicas en varios países.",
+        "Falta de conciencia empresarial: las PyMEs subestiman riesgos y sufren ransomware y phishing.",
+        "Oportunidad: la alta tasa de ataques aumenta la demanda de hackers éticos, consultores y formadores."
+      ],
+      "explanation": "Los cuatro elementos aparecen como retos y oportunidades en la página 44.",
+      "source_file": "C:/Users/vlaweirna/Desktop/ExamenSeguridad/Unidad II - Seguridad en la Infraestructura de Red.pdf"
+    }
+  ]
+}

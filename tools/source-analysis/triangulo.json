@@ -1,0 +1,441 @@
+{
+  "source_file": "C:/Users/vlaweirna/Desktop/ExamenSeguridad/Introduccion_Triangulo_Seguridad.pdf",
+  "pages_or_units_read": [
+    {"pdf_page": 1, "printed_slide": null, "unit": "Portada: Introducción al Triángulo de Seguridad de la Información"},
+    {"pdf_page": 2, "printed_slide": null, "unit": "Pregunta inicial: secreta, exacta o siempre disponible"},
+    {"pdf_page": 3, "printed_slide": 3, "unit": "Introducción: toda organización tiene algo que proteger"},
+    {"pdf_page": 4, "printed_slide": 4, "unit": "Seguridad como equilibrio entre riesgos y controles"},
+    {"pdf_page": 5, "printed_slide": 5, "unit": "Qué es la tríada CIA"},
+    {"pdf_page": 6, "printed_slide": 6, "unit": "Actividad de clasificación de casos CIA"},
+    {"pdf_page": 7, "printed_slide": 8, "unit": "Definición de confidencialidad"},
+    {"pdf_page": 8, "printed_slide": 9, "unit": "Control de acceso y privilegios correctos"},
+    {"pdf_page": 9, "printed_slide": 10, "unit": "Amenazas y protecciones de confidencialidad"},
+    {"pdf_page": 10, "printed_slide": 11, "unit": "Errores y controles insuficientes que rompen la confidencialidad"},
+    {"pdf_page": 11, "printed_slide": 12, "unit": "Quiz de confidencialidad"},
+    {"pdf_page": 12, "printed_slide": 14, "unit": "Definición de integridad"},
+    {"pdf_page": 13, "printed_slide": 15, "unit": "Finalidad de la integridad"},
+    {"pdf_page": 14, "printed_slide": 16, "unit": "Amenazas y protecciones de integridad"},
+    {"pdf_page": 15, "printed_slide": 17, "unit": "Violaciones accidentales de integridad"},
+    {"pdf_page": 16, "printed_slide": 18, "unit": "Quiz de integridad"},
+    {"pdf_page": 17, "printed_slide": 20, "unit": "Definición de disponibilidad"},
+    {"pdf_page": 18, "printed_slide": 21, "unit": "Importancia y métricas de disponibilidad"},
+    {"pdf_page": 19, "printed_slide": 22, "unit": "Cómo garantizar la disponibilidad"},
+    {"pdf_page": 20, "printed_slide": 23, "unit": "Quiz de disponibilidad"},
+    {"pdf_page": 21, "printed_slide": 25, "unit": "Repaso del triángulo completo y equilibrio entre pilares"},
+    {"pdf_page": 22, "printed_slide": 26, "unit": "Reto final: caso integrador"}
+  ],
+  "extraction_issues": [
+    "El PDF contiene 22 páginas, pero la numeración impresa salta las diapositivas 7, 13, 19 y 24; por ello se distingue entre página física del PDF y número de diapositiva impreso.",
+    "Todas las páginas tienen capa de texto, pero en las páginas PDF 10 y 19 la extracción lineal mezcla el orden de columnas. Las asociaciones correctas se verificaron visualmente en las páginas renderizadas.",
+    "Las páginas PDF 9 y 14 presentan listas paralelas de amenazas y protecciones. El diseño no afirma de manera explícita que cada elemento de una fila sea una correspondencia exclusiva uno-a-uno.",
+    "Los tres quizzes muestran opciones, pero no una clave marcada visualmente; las respuestas se infieren únicamente de las definiciones y explicaciones del propio PDF.",
+    "En el caso integrador de la página PDF 22 no se especifica quién editó el archivo ni con qué intención, así que no puede afirmarse a partir del documento que esa edición haya sido maliciosa."
+  ],
+  "sections": [
+    {
+      "name": "Introducción, alcance y responsabilidad (PDF pp. 1-4)",
+      "concepts": [
+        "La tríada CIA está formada por Confidencialidad, Integridad y Disponibilidad (PDF p. 1).",
+        "La información puede plantearse como algo que debe ser secreto, exacto o estar siempre disponible (PDF p. 2).",
+        "Toda organización, pública o privada y grande o pequeña, tiene información que proteger (PDF p. 3).",
+        "La seguridad de la información se presenta como un equilibrio informado entre riesgos y controles, no como la eliminación total del riesgo (PDF p. 4)."
+      ],
+      "details": [
+        "Entre los elementos que una organización necesita cuidar se mencionan datos de clientes, productos, servicios y empleados (PDF p. 3).",
+        "La responsabilidad de proteger la información no corresponde solo al equipo de TI: cada persona debe saber proteger la información que maneja (PDF p. 3).",
+        "Prevenir la divulgación no autorizada, el daño o la destrucción de la información es tarea de todos (PDF p. 3).",
+        "El documento define la seguridad de la información como una sensación bien informada de garantía de que los riesgos y controles están equilibrados (PDF p. 4).",
+        "Eliminar todo riesgo se califica como imposible; la alternativa es conocerlo y equilibrarlo con controles adecuados (PDF p. 4)."
+      ],
+      "commands_or_examples": [
+        "Pregunta de apertura: elegir entre mantener la información secreta, exacta o siempre disponible (PDF p. 2)."
+      ],
+      "contradictions_or_ambiguities": [
+        "La pregunta de apertura obliga a elegir una sola propiedad como recurso didáctico, pero el resto del PDF presenta las tres como pilares que deben equilibrarse; no se ofrece una única respuesta correcta en esa página."
+      ]
+    },
+    {
+      "name": "Tríada CIA y clasificación inicial (PDF pp. 5-6)",
+      "concepts": [
+        "La tríada CIA es la base sobre la que se diseñan los sistemas de seguridad y se usa para encontrar vulnerabilidades y crear soluciones (PDF p. 5).",
+        "Confidencialidad: solo accede quien está autorizado (PDF p. 5).",
+        "Integridad: los datos son exactos y no han sido alterados (PDF p. 5).",
+        "Disponibilidad: la información está lista cuando se necesita (PDF p. 5)."
+      ],
+      "details": [
+        "La actividad inicial pide relacionar tres incidentes con C, I o A (PDF p. 6).",
+        "El robo de contraseñas mediante phishing afecta la confidencialidad, según la definición de acceso autorizado del propio material (PDF pp. 5-6).",
+        "Un archivo modificado en tránsito que llega distinto de como se envió afecta la integridad, según la definición de exactitud y ausencia de alteración (PDF pp. 5-6).",
+        "Un ataque DDoS que tumba el servidor e impide usar el sistema afecta la disponibilidad, según la definición de información lista cuando se necesita (PDF pp. 5-6)."
+      ],
+      "commands_or_examples": [
+        "Caso 1: robo de contraseñas de clientes mediante phishing (PDF p. 6).",
+        "Caso 2: modificación de un archivo en tránsito (PDF p. 6).",
+        "Caso 3: caída de un servidor por un ataque DDoS (PDF p. 6)."
+      ],
+      "contradictions_or_ambiguities": [
+        "La página de actividad no imprime las respuestas; las clasificaciones anteriores se infieren de las definiciones de la página PDF 5."
+      ]
+    },
+    {
+      "name": "Confidencialidad (PDF pp. 7-11)",
+      "concepts": [
+        "Confidencialidad significa que los datos se mantengan secretos o privados y sean accesibles solo para quien está autorizado (PDF p. 7).",
+        "Implica evitar el intercambio no autorizado de datos, tanto intencional como accidental, y controlar el acceso a la información (PDF p. 8).",
+        "El componente clave son los privilegios correctos (PDF p. 8)."
+      ],
+      "details": [
+        "Quien no debe tener acceso no puede llegar a los activos importantes del negocio (PDF p. 8).",
+        "Quien sí necesita acceso cuenta con los privilegios necesarios para trabajar sin fricción (PDF p. 8).",
+        "Amenazas enumeradas: phishing, malware o keyloggers, ataques man-in-the-middle, inyección SQL y fuerza bruta (PDF p. 9).",
+        "El phishing se describe como suplantación para robar credenciales (PDF p. 9).",
+        "El malware o los keyloggers se describen como software malicioso que espía la actividad (PDF p. 9).",
+        "Man-in-the-middle se describe como interceptación de comunicaciones en red (PDF p. 9).",
+        "La inyección SQL se relaciona con acceso indebido a bases de datos (PDF p. 9).",
+        "La fuerza bruta consiste en adivinar credenciales por ensayo y error (PDF p. 9).",
+        "Protecciones enumeradas: clasificar y etiquetar datos, políticas de control de acceso, cifrado de datos, autenticación multifactor y capacitación continua (PDF p. 9).",
+        "Clasificar y etiquetar permite saber qué es sensible y quién puede verlo; el control de acceso limita la entrada al personal autorizado; el cifrado vuelve ilegibles los datos para quien no tiene la llave; MFA hace que una contraseña ya no baste; la capacitación ayuda a reconocer y evitar riesgos (PDF p. 9).",
+        "El error humano y los controles insuficientes también pueden romper la confidencialidad (PDF p. 10).",
+        "Contraseñas sin proteger: dejarlas anotadas o visibles en la estación de trabajo (PDF p. 10).",
+        "Compartir credenciales: prestar el usuario o dejar visible el inicio de sesión (PDF p. 10).",
+        "Comunicación sin cifrar: enviar información sensible sin protección, permitiendo que se intercepte (PDF p. 10)."
+      ],
+      "commands_or_examples": [
+        "Quiz: un compañero presta su contraseña para revisar un reporte urgente; la opción coherente con el material es B, porque una persona sin autorización accede a información restringida (PDF p. 11)."
+      ],
+      "contradictions_or_ambiguities": [
+        "Las amenazas y protecciones de la página PDF 9 aparecen en columnas paralelas, pero el documento no establece que cada fila constituya una pareja exclusiva amenaza-control.",
+        "En el quiz, la urgencia y la intención de ayudar no eliminan el acceso no autorizado; la opción D contradice la definición dada (PDF pp. 7-8 y 11)."
+      ]
+    },
+    {
+      "name": "Integridad (PDF pp. 12-16)",
+      "concepts": [
+        "Integridad significa que los datos sean confiables, auténticos, precisos y estén libres de alteraciones (PDF p. 12).",
+        "Solo se mantiene si los datos están libres de alteraciones no autorizadas (PDF p. 13).",
+        "La finalidad es asegurar que la información esté completa y que no haya sufrido modificaciones (PDF p. 13)."
+      ],
+      "details": [
+        "Información completa significa que nada falta ni sobra y que se conserva tal cual fue creada (PDF p. 13).",
+        "Ausencia de modificaciones significa que lo enviado es exactamente lo recibido, ni más ni menos (PDF p. 13).",
+        "Amenazas enumeradas: manipulación de bases de datos, envenenamiento de modelos de IA, ransomware y ataques man-in-the-middle (PDF p. 14).",
+        "La manipulación de bases de datos altera registros almacenados sin autorización (PDF p. 14).",
+        "El envenenamiento de modelos de IA corrompe los datos de entrenamiento de un sistema (PDF p. 14).",
+        "El ransomware cifra o modifica archivos para exigir un rescate (PDF p. 14).",
+        "Los ataques man-in-the-middle interceptan y alteran datos mientras viajan por la red (PDF p. 14).",
+        "Protecciones enumeradas: funciones hash, cifrado, certificados y firmas digitales, y autoridades de certificación (CA) (PDF p. 14).",
+        "Las funciones hash detectan si un archivo fue modificado; el cifrado protege los datos almacenados o transmitidos; certificados y firmas verifican autenticidad y origen; las CA confirman que un sitio web es quien dice ser (PDF p. 14).",
+        "La integridad también puede violarse por accidente debido a error humano o políticas insuficientes (PDF p. 15).",
+        "Ingresar un código incorrecto o cometer un error por descuido puede alterar información sin mala intención (PDF p. 15).",
+        "Políticas, protecciones y procedimientos inadecuados pueden permitir una violación sin culpa directa de una persona (PDF p. 15)."
+      ],
+      "commands_or_examples": [
+        "Quiz: un ransomware cifra archivos financieros y modifica su contenido; la respuesta pretendida es C, Integridad, porque el contenido fue alterado sin autorización (PDF p. 16)."
+      ],
+      "contradictions_or_ambiguities": [
+        "El escenario del quiz también dice que los archivos no pueden abrirse, lo que hace plausible un efecto sobre disponibilidad; sin embargo, la pregunta pide el pilar más directamente comprometido y subraya la modificación del contenido, por lo que la opción pretendida es C (PDF p. 16).",
+        "Las amenazas y protecciones de la página PDF 14 son listas paralelas; no se afirma que cada fila sea una correspondencia exclusiva."
+      ]
+    },
+    {
+      "name": "Disponibilidad (PDF pp. 17-20)",
+      "concepts": [
+        "Disponibilidad significa que sistemas, redes y aplicaciones funcionen como deben y cuando se necesitan (PDF p. 17).",
+        "Los datos confidenciales e íntegros son inútiles si no están disponibles para la organización y sus clientes cuando los necesitan (PDF p. 18)."
+      ],
+      "details": [
+        "El material muestra 99.9% como uptime típico exigido a sistemas críticos (PDF p. 18).",
+        "Para los 'tres nueves' muestra menos de 8 horas 46 minutos de caída al año permitida (PDF p. 18).",
+        "También presenta 24/7 como disponibilidad esperada por clientes y usuarios (PDF p. 18).",
+        "Redundancia: redes, servidores y aplicaciones redundantes entran en acción si falla el sistema principal (PDF p. 19).",
+        "Mantenerse actualizado: actualizar paquetes de software y sistemas de seguridad reduce fallas y cierra brechas nuevas (PDF p. 19).",
+        "Backups y plan de recuperación: copias de seguridad y planes de recuperación ante desastres permiten volver a operar rápido tras un incidente (PDF p. 19)."
+      ],
+      "commands_or_examples": [
+        "Quiz: ante un DDoS que satura servidores de una tienda en línea, la medida que más ayuda entre las opciones es B: servidores y redes redundantes con balanceo de carga (PDF p. 20)."
+      ],
+      "contradictions_or_ambiguities": [
+        "99.9%, menos de 8 h 46 m y 24/7 se presentan como indicadores distintos en tres tarjetas; el documento no explica si 24/7 implica ausencia total de caídas o solo expectativa continua de servicio.",
+        "El balanceo de carga aparece en la opción correcta del quiz, aunque no se desarrolla en la diapositiva previa de controles."
+      ]
+    },
+    {
+      "name": "Repaso y equilibrio entre pilares (PDF p. 21)",
+      "concepts": [
+        "El triángulo representa juntos Confidencialidad, Integridad y Disponibilidad (PDF p. 21).",
+        "Los tres pilares se equilibran entre sí (PDF p. 21)."
+      ],
+      "details": [
+        "Controles resumidos para confidencialidad: cifrado, MFA y control de acceso (PDF p. 21).",
+        "Controles resumidos para integridad: hash, firmas digitales y certificados (PDF p. 21).",
+        "Controles resumidos para disponibilidad: redundancia, backups y actualizaciones (PDF p. 21).",
+        "Reforzar un pilar en exceso puede debilitar otro; el ejemplo es bloquear demasiado el acceso y perjudicar la disponibilidad (PDF p. 21)."
+      ],
+      "commands_or_examples": [
+        "Ejemplo de compensación: un bloqueo excesivo del acceso puede reforzar la restricción pero debilitar la disponibilidad (PDF p. 21)."
+      ],
+      "contradictions_or_ambiguities": [
+        "El documento no define un método cuantitativo para decidir el punto de equilibrio entre pilares."
+      ]
+    },
+    {
+      "name": "Reto final: caso integrador (PDF p. 22)",
+      "concepts": [
+        "El caso integra confidencialidad e integridad en una secuencia de incidentes (PDF p. 22).",
+        "La página pide identificar pilares comprometidos, controles preventivos y si hubo ataque, error humano o ambos (PDF p. 22)."
+      ],
+      "details": [
+        "Un empleado de recursos humanos descarga el archivo de nóminas a una memoria USB sin cifrar para trabajar desde casa (PDF p. 22).",
+        "El empleado pierde la memoria en el camino (PDF p. 22).",
+        "Días después, alguien edita el archivo original en el servidor (PDF p. 22).",
+        "El cambio no se detecta hasta el pago del mes siguiente (PDF p. 22).",
+        "La pérdida de una USB sin cifrar compromete la confidencialidad porque el archivo deja de estar protegido frente a quien encuentre el dispositivo, de acuerdo con las definiciones y controles del propio PDF (PDF pp. 7, 9-10 y 22).",
+        "La edición no detectada del archivo original compromete la integridad porque el contenido fue modificado y dejó de conservarse como estaba creado (PDF pp. 12-14 y 22).",
+        "El cifrado habría protegido la información de la USB frente a quien no tuviera la llave; funciones hash, certificados o firmas digitales son controles citados para detectar modificaciones o verificar autenticidad y origen (PDF pp. 9, 14, 21-22)."
+      ],
+      "commands_or_examples": [
+        "Preguntas del reto: qué pilares se comprometieron y cuándo; qué controles habrían evitado cada falla; si fue ataque, error humano o ambos (PDF p. 22)."
+      ],
+      "contradictions_or_ambiguities": [
+        "La pérdida de la memoria puede describirse como error humano según el marco del PDF, pero el documento no declara si la edición posterior fue autorizada, accidental o maliciosa; por ello no permite resolver con certeza la parte 'ataque o ambos'.",
+        "El caso pregunta qué controles habrían evitado cada falla, pero algunos controles presentados, como las funciones hash, principalmente permiten detectar cambios; el PDF no distingue de forma explícita entre prevención y detección."
+      ]
+    }
+  ],
+  "candidate_questions": [
+    {
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "topic": "Componentes de la tríada CIA",
+      "section": "Tríada CIA y clasificación inicial (PDF p. 5)",
+      "prompt": "¿Qué conjunto forma la tríada CIA según el material?",
+      "options": ["A. Confidencialidad, Integridad y Disponibilidad", "B. Cifrado, Identidad y Autenticación", "C. Control, Inspección y Acceso", "D. Confidencialidad, Internet y Aplicaciones"],
+      "correct": "A",
+      "expected_answer": "Confidencialidad, Integridad y Disponibilidad.",
+      "key_points": ["Los tres pilares se nombran explícitamente en las páginas PDF 1 y 5."],
+      "explanation": "La página PDF 5 presenta Confidencialidad, Integridad y Disponibilidad como la base sobre la que se diseñan los sistemas de seguridad.",
+      "source_file": "C:/Users/vlaweirna/Desktop/ExamenSeguridad/Introduccion_Triangulo_Seguridad.pdf"
+    },
+    {
+      "type": "short_answer",
+      "difficulty": "medium",
+      "topic": "Riesgo y controles",
+      "section": "Introducción, alcance y responsabilidad (PDF p. 4)",
+      "prompt": "¿Cómo plantea el PDF la relación entre riesgo y controles en seguridad de la información?",
+      "options": [],
+      "correct": "Conocer los riesgos y equilibrarlos con controles adecuados, no intentar eliminarlos por completo.",
+      "expected_answer": "La seguridad consiste en una garantía informada de que riesgos y controles están equilibrados; eliminar todo riesgo se considera imposible.",
+      "key_points": ["Equilibrio informado", "Conocer el riesgo", "Controles adecuados", "No eliminación total del riesgo"],
+      "explanation": "La formulación aparece en la página PDF 4.",
+      "source_file": "C:/Users/vlaweirna/Desktop/ExamenSeguridad/Introduccion_Triangulo_Seguridad.pdf"
+    },
+    {
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "topic": "Responsabilidad organizacional",
+      "section": "Introducción, alcance y responsabilidad (PDF p. 3)",
+      "prompt": "¿Quién debe proteger la información dentro de una organización según el PDF?",
+      "options": ["A. Solo el equipo de TI", "B. Solo especialistas externos", "C. Cada persona que maneja información", "D. Únicamente la dirección"],
+      "correct": "C",
+      "expected_answer": "Cada persona en la organización debe saber proteger la información que maneja.",
+      "key_points": ["No es responsabilidad exclusiva de TI", "Es tarea de todos"],
+      "explanation": "La página PDF 3 indica que no hay suficientes especialistas para cubrir todo y que la responsabilidad es de toda la organización.",
+      "source_file": "C:/Users/vlaweirna/Desktop/ExamenSeguridad/Introduccion_Triangulo_Seguridad.pdf"
+    },
+    {
+      "type": "matching",
+      "difficulty": "easy",
+      "topic": "Clasificación de incidentes CIA",
+      "section": "Tríada CIA y clasificación inicial (PDF pp. 5-6)",
+      "prompt": "Relaciona cada incidente con el pilar principal: (1) phishing roba contraseñas, (2) archivo modificado en tránsito, (3) DDoS impide usar el sistema.",
+      "options": ["Confidencialidad", "Integridad", "Disponibilidad"],
+      "correct": {"1": "Confidencialidad", "2": "Integridad", "3": "Disponibilidad"},
+      "expected_answer": "1-Confidencialidad; 2-Integridad; 3-Disponibilidad.",
+      "key_points": ["Acceso no autorizado", "Alteración", "Imposibilidad de uso"],
+      "explanation": "Los casos están en la página PDF 6 y las definiciones necesarias para clasificarlos en la página PDF 5.",
+      "source_file": "C:/Users/vlaweirna/Desktop/ExamenSeguridad/Introduccion_Triangulo_Seguridad.pdf"
+    },
+    {
+      "type": "short_answer",
+      "difficulty": "medium",
+      "topic": "Privilegios correctos",
+      "section": "Confidencialidad (PDF pp. 7-8)",
+      "prompt": "Explica qué significa aplicar privilegios correctos en confidencialidad.",
+      "options": [],
+      "correct": "Impedir que quien no debe acceder llegue a activos importantes y dar a quien sí necesita acceso los privilegios necesarios para trabajar sin fricción.",
+      "expected_answer": "Debe excluirse a quien no está autorizado y habilitarse suficientemente a quien sí necesita acceso.",
+      "key_points": ["Acceso solo autorizado", "Bloqueo de quien no debe acceder", "Privilegios suficientes para trabajar"],
+      "explanation": "La página PDF 8 presenta estas dos caras del control de acceso.",
+      "source_file": "C:/Users/vlaweirna/Desktop/ExamenSeguridad/Introduccion_Triangulo_Seguridad.pdf"
+    },
+    {
+      "type": "multiple_select",
+      "difficulty": "medium",
+      "topic": "Amenazas a la confidencialidad",
+      "section": "Confidencialidad (PDF p. 9)",
+      "prompt": "Selecciona todas las amenazas que el PDF enumera en la sección de confidencialidad.",
+      "options": ["A. Phishing", "B. Malware o keyloggers", "C. Man-in-the-middle", "D. Inyección SQL", "E. Fuerza bruta", "F. Redundancia"],
+      "correct": ["A", "B", "C", "D", "E"],
+      "expected_answer": "Phishing, malware/keyloggers, man-in-the-middle, inyección SQL y fuerza bruta.",
+      "key_points": ["Redundancia aparece como control de disponibilidad, no como amenaza de confidencialidad."],
+      "explanation": "La lista completa aparece en la columna de amenazas de la página PDF 9.",
+      "source_file": "C:/Users/vlaweirna/Desktop/ExamenSeguridad/Introduccion_Triangulo_Seguridad.pdf"
+    },
+    {
+      "type": "matching",
+      "difficulty": "medium",
+      "topic": "Fallas no maliciosas de confidencialidad",
+      "section": "Confidencialidad (PDF p. 10)",
+      "prompt": "Relaciona cada práctica con su descripción: (1) contraseñas sin proteger, (2) compartir credenciales, (3) comunicación sin cifrar.",
+      "options": ["A. Dejar la contraseña anotada o visible", "B. Prestar el usuario o dejar visible el login", "C. Enviar información sensible sin protección y permitir su interceptación"],
+      "correct": {"1": "A", "2": "B", "3": "C"},
+      "expected_answer": "1-A; 2-B; 3-C.",
+      "key_points": ["Error humano", "Controles insuficientes", "La confidencialidad puede romperse sin ataque"],
+      "explanation": "Las tres asociaciones se muestran en columnas separadas en la página PDF 10.",
+      "source_file": "C:/Users/vlaweirna/Desktop/ExamenSeguridad/Introduccion_Triangulo_Seguridad.pdf"
+    },
+    {
+      "type": "multiple_choice",
+      "difficulty": "easy",
+      "topic": "Acceso no autorizado",
+      "section": "Confidencialidad (PDF p. 11)",
+      "prompt": "Un compañero presta su contraseña para revisar un reporte urgente. ¿Qué pilar se compromete?",
+      "options": ["A. Disponibilidad", "B. Confidencialidad", "C. Integridad", "D. Ninguno"],
+      "correct": "B",
+      "expected_answer": "Confidencialidad.",
+      "key_points": ["Alguien sin autorización accede a información restringida", "La intención de ayudar no elimina el riesgo"],
+      "explanation": "La opción B reproduce la explicación compatible con la definición de confidencialidad de las páginas PDF 7-8.",
+      "source_file": "C:/Users/vlaweirna/Desktop/ExamenSeguridad/Introduccion_Triangulo_Seguridad.pdf"
+    },
+    {
+      "type": "short_answer",
+      "difficulty": "medium",
+      "topic": "Finalidad de la integridad",
+      "section": "Integridad (PDF pp. 12-13)",
+      "prompt": "¿Qué dos condiciones busca asegurar la integridad de la información?",
+      "options": [],
+      "correct": "Que la información esté completa y que no haya sufrido modificaciones.",
+      "expected_answer": "Nada falta ni sobra y lo enviado es exactamente lo recibido, ni más ni menos.",
+      "key_points": ["Completitud", "Ausencia de modificaciones", "Conservación tal como fue creada"],
+      "explanation": "Las dos condiciones y sus aclaraciones aparecen en la página PDF 13.",
+      "source_file": "C:/Users/vlaweirna/Desktop/ExamenSeguridad/Introduccion_Triangulo_Seguridad.pdf"
+    },
+    {
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "topic": "Controles de integridad",
+      "section": "Integridad (PDF p. 14)",
+      "prompt": "¿Qué control detecta si un archivo fue modificado según el PDF?",
+      "options": ["A. Funciones hash", "B. Redundancia", "C. Capacitación continua", "D. Balanceo de carga"],
+      "correct": "A",
+      "expected_answer": "Funciones hash.",
+      "key_points": ["Su función descrita es detectar modificaciones de archivos"],
+      "explanation": "La página PDF 14 atribuye explícitamente esta función a los hashes.",
+      "source_file": "C:/Users/vlaweirna/Desktop/ExamenSeguridad/Introduccion_Triangulo_Seguridad.pdf"
+    },
+    {
+      "type": "multiple_select",
+      "difficulty": "medium",
+      "topic": "Violaciones accidentales de integridad",
+      "section": "Integridad (PDF p. 15)",
+      "prompt": "¿Qué causas accidentales de violación de integridad menciona el material?",
+      "options": ["A. Error humano", "B. Políticas insuficientes", "C. Únicamente ransomware", "D. Un código ingresado incorrectamente"],
+      "correct": ["A", "B", "D"],
+      "expected_answer": "Error humano, como ingresar un código incorrecto, y políticas, protecciones o procedimientos insuficientes.",
+      "key_points": ["Puede no existir mala intención", "Puede no haber culpa directa"],
+      "explanation": "La página PDF 15 desarrolla ambas causas.",
+      "source_file": "C:/Users/vlaweirna/Desktop/ExamenSeguridad/Introduccion_Triangulo_Seguridad.pdf"
+    },
+    {
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "topic": "Ransomware e integridad",
+      "section": "Integridad (PDF p. 16)",
+      "prompt": "Un ransomware cifra archivos financieros y modifica su contenido. Si se pregunta por el pilar más directamente comprometido por la alteración, ¿cuál es?",
+      "options": ["A. Disponibilidad", "B. Confidencialidad", "C. Integridad", "D. Ninguno"],
+      "correct": "C",
+      "expected_answer": "Integridad.",
+      "key_points": ["El contenido fue alterado sin autorización", "La pregunta enfatiza la modificación"],
+      "explanation": "La opción C es la respuesta pretendida por el quiz; el caso puede tener además efecto sobre disponibilidad, pero se pregunta por la alteración más directa.",
+      "source_file": "C:/Users/vlaweirna/Desktop/ExamenSeguridad/Introduccion_Triangulo_Seguridad.pdf"
+    },
+    {
+      "type": "short_answer",
+      "difficulty": "easy",
+      "topic": "Definición de disponibilidad",
+      "section": "Disponibilidad (PDF pp. 17-18)",
+      "prompt": "Define disponibilidad usando la formulación del PDF.",
+      "options": [],
+      "correct": "Que los sistemas, redes y aplicaciones funcionen como deben y cuando se necesitan.",
+      "expected_answer": "La información y los servicios deben poder usarse cuando la organización y sus clientes los necesitan.",
+      "key_points": ["Funcionamiento correcto", "Momento de necesidad", "Utilidad para organización y clientes"],
+      "explanation": "La definición está en la página PDF 17 y se amplía en la página PDF 18.",
+      "source_file": "C:/Users/vlaweirna/Desktop/ExamenSeguridad/Introduccion_Triangulo_Seguridad.pdf"
+    },
+    {
+      "type": "fill_in",
+      "difficulty": "medium",
+      "topic": "Métricas de disponibilidad",
+      "section": "Disponibilidad (PDF p. 18)",
+      "prompt": "Completa los datos mostrados: uptime típico de sistemas críticos = ___; caída anual permitida en 'tres nueves' = ___; disponibilidad esperada por clientes y usuarios = ___.",
+      "options": [],
+      "correct": ["99.9%", "< 8 h 46 m", "24/7"],
+      "expected_answer": "99.9%; menos de 8 horas 46 minutos; 24/7.",
+      "key_points": ["Reproducir exactamente los tres indicadores del material"],
+      "explanation": "Los tres valores aparecen en tarjetas en la página PDF 18.",
+      "source_file": "C:/Users/vlaweirna/Desktop/ExamenSeguridad/Introduccion_Triangulo_Seguridad.pdf"
+    },
+    {
+      "type": "matching",
+      "difficulty": "medium",
+      "topic": "Controles de disponibilidad",
+      "section": "Disponibilidad (PDF p. 19)",
+      "prompt": "Relaciona cada control con su función: (1) redundancia, (2) mantenerse actualizado, (3) backups y plan de recuperación.",
+      "options": ["A. Volver a operar rápido tras un incidente", "B. Entrar en acción si falla el sistema principal", "C. Reducir fallas y cerrar brechas nuevas"],
+      "correct": {"1": "B", "2": "C", "3": "A"},
+      "expected_answer": "1-B; 2-C; 3-A.",
+      "key_points": ["Sistemas redundantes", "Actualizaciones", "Copias y recuperación ante desastres"],
+      "explanation": "Las asociaciones se verifican en las tres tarjetas de la página PDF 19.",
+      "source_file": "C:/Users/vlaweirna/Desktop/ExamenSeguridad/Introduccion_Triangulo_Seguridad.pdf"
+    },
+    {
+      "type": "multiple_choice",
+      "difficulty": "medium",
+      "topic": "Mitigación del impacto de DDoS",
+      "section": "Disponibilidad (PDF p. 20)",
+      "prompt": "Un DDoS satura los servidores de una tienda en línea. ¿Qué opción del material ayuda más a prevenir el impacto?",
+      "options": ["A. Cifrar la base de datos", "B. Usar servidores y redes redundantes con balanceo de carga", "C. Exigir contraseñas más largas", "D. Firmar digitalmente cada transacción"],
+      "correct": "B",
+      "expected_answer": "Usar servidores y redes redundantes con balanceo de carga.",
+      "key_points": ["El incidente impide que el sitio responda", "La respuesta se orienta a disponibilidad"],
+      "explanation": "La opción B es la única que coincide con el control de redundancia presentado para disponibilidad en las páginas PDF 19-20.",
+      "source_file": "C:/Users/vlaweirna/Desktop/ExamenSeguridad/Introduccion_Triangulo_Seguridad.pdf"
+    },
+    {
+      "type": "case_analysis",
+      "difficulty": "hard",
+      "topic": "Equilibrio entre pilares",
+      "section": "Repaso y equilibrio entre pilares (PDF p. 21)",
+      "prompt": "Explica, con el ejemplo del PDF, cómo reforzar un pilar en exceso puede debilitar otro.",
+      "options": [],
+      "correct": "Bloquear demasiado el acceso puede reforzar la restricción de acceso, pero debilitar la disponibilidad.",
+      "expected_answer": "Los pilares deben equilibrarse; un control excesivo de acceso puede impedir que la información esté disponible cuando se necesita.",
+      "key_points": ["Equilibrio", "Bloqueo excesivo", "Debilitamiento de disponibilidad"],
+      "explanation": "La relación se formula explícitamente al pie de la página PDF 21.",
+      "source_file": "C:/Users/vlaweirna/Desktop/ExamenSeguridad/Introduccion_Triangulo_Seguridad.pdf"
+    },
+    {
+      "type": "case_analysis",
+      "difficulty": "hard",
+      "topic": "Caso integrador CIA",
+      "section": "Reto final: caso integrador (PDF p. 22)",
+      "prompt": "En el caso de la memoria USB con nóminas y el archivo del servidor editado, identifica los pilares comprometidos, el momento de cada compromiso, controles del material aplicables y lo que no puede determinarse sobre ataque o error.",
+      "options": [],
+      "correct": "Confidencialidad al perder la USB sin cifrar; integridad al editarse el archivo original sin detectarse. Cifrado para la USB y funciones hash, firmas o certificados para detectar o verificar cambios. La pérdida es compatible con error humano; la intención de la edición no está especificada.",
+      "expected_answer": "Debe distinguir la exposición del archivo de nóminas por la USB perdida de la modificación no detectada en el servidor y reconocer la ambigüedad sobre la intención del editor.",
+      "key_points": ["Confidencialidad: USB sin cifrar y perdida", "Integridad: edición no detectada", "Cifrado", "Hash/firmas/certificados", "Error humano en la pérdida", "Intención de la edición no indicada"],
+      "explanation": "El caso está en la página PDF 22; los controles y definiciones usados proceden de las páginas PDF 7-10, 12-14 y 21.",
+      "source_file": "C:/Users/vlaweirna/Desktop/ExamenSeguridad/Introduccion_Triangulo_Seguridad.pdf"
+    }
+  ]
+}
