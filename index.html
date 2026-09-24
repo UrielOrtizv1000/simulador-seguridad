@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="es" data-theme="dark">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark light">
+  <title>Simulador de Examen — Seguridad</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div>
+      <p class="eyebrow">SEGURIDAD DE LA INFORMACIÓN</p>
+      <h1>Simulador de Examen — Seguridad</h1>
+    </div>
+    <button id="theme-toggle" class="button ghost" type="button" aria-label="Cambiar tema">Modo claro</button>
+  </header>
+
+  <main>
+    <section id="start-view" class="view" aria-labelledby="start-title">
+      <div class="intro-line">
+        <div>
+          <h2 id="start-title">Banco de estudio</h2>
+          <p id="bank-summary" class="muted">Cargando preguntas…</p>
+        </div>
+        <div id="type-counts" class="metric-strip" aria-label="Conteo por tipo"></div>
+      </div>
+
+      <div class="setup-grid">
+        <form id="setup-form" class="setup-panel">
+          <fieldset>
+            <legend>Modalidad</legend>
+            <label class="mode-option"><input type="radio" name="mode" value="complete" checked><span><strong>Examen completo</strong><small>Todo el banco, todos los temas.</small></span></label>
+            <label class="mode-option"><input type="radio" name="mode" value="random"><span><strong>Práctica aleatoria</strong><small>Una selección nueva en cada intento.</small></span></label>
+            <label class="mode-option"><input type="radio" name="mode" value="type"><span><strong>Por tipo</strong><small>Opción múltiple, verdadero/falso o abiertas.</small></span></label>
+            <label class="mode-option"><input type="radio" name="mode" value="topic"><span><strong>Por tema</strong><small>Concentra la práctica en una unidad.</small></span></label>
+            <label class="mode-option"><input type="radio" name="mode" value="errors"><span><strong>Preguntas por repasar</strong><small id="wrong-mode-help">Sin errores guardados.</small></span></label>
+            <label class="mode-option"><input type="radio" name="mode" value="favorites"><span><strong>Favoritas</strong><small id="favorite-mode-help">Sin favoritas guardadas.</small></span></label>
+          </fieldset>
+
+          <div id="random-controls" class="conditional-controls" hidden>
+            <label for="random-count">Número de preguntas</label>
+            <input id="random-count" type="number" min="1" value="20">
+          </div>
+          <div id="type-controls" class="conditional-controls" hidden>
+            <label for="type-select">Tipo de pregunta</label>
+            <select id="type-select">
+              <option value="multiple">Opción múltiple</option>
+              <option value="true_false">Verdadero o falso</option>
+              <option value="open">Pregunta abierta</option>
+            </select>
+          </div>
+          <div id="topic-controls" class="conditional-controls" hidden>
+            <label for="topic-select">Tema</label>
+            <select id="topic-select"></select>
+          </div>
+
+          <p id="setup-error" class="form-error" role="alert" hidden></p>
+          <div class="button-row">
+            <button class="button primary" type="submit">Iniciar práctica</button>
+            <button id="resume-button" class="button secondary" type="button" hidden>Continuar progreso</button>
+          </div>
+        </form>
+
+        <aside class="session-panel" aria-labelledby="session-title">
+          <h3 id="session-title">Estadísticas guardadas</h3>
+          <dl id="lifetime-stats" class="stats-list"></dl>
+          <button id="clear-progress" class="text-button danger" type="button">Borrar progreso y estadísticas</button>
+        </aside>
+      </div>
+    </section>
+
+    <section id="exam-view" class="view" hidden aria-live="polite">
+      <div class="exam-toolbar">
+        <div>
+          <p id="question-counter" class="eyebrow"></p>
+          <div class="progress-track" role="progressbar" aria-label="Progreso del examen" aria-valuemin="0" aria-valuemax="100"><span id="progress-bar"></span></div>
+        </div>
+        <div class="live-score"><span id="live-correct">0</span> aciertos · <span id="live-answered">0</span> respondidas</div>
+      </div>
+
+      <article class="question-panel">
+        <div class="question-meta">
+          <span id="question-type" class="tag"></span>
+          <span id="question-difficulty" class="tag"></span>
+          <span id="question-topic" class="topic-label"></span>
+        </div>
+        <h2 id="question-text"></h2>
+        <div id="answer-area"></div>
+        <div id="feedback" class="feedback" hidden></div>
+        <div class="question-actions">
+          <button id="previous-button" class="button secondary" type="button">Anterior</button>
+          <button id="favorite-button" class="button ghost" type="button" aria-pressed="false">Marcar favorita</button>
+          <span class="action-spacer"></span>
+          <button id="submit-button" class="button primary" type="button">Responder</button>
+          <button id="next-button" class="button secondary" type="button">Siguiente</button>
+          <button id="finish-button" class="button danger-button" type="button">Finalizar</button>
+        </div>
+      </article>
+    </section>
+
+    <section id="results-view" class="view" hidden aria-labelledby="results-title">
+      <div class="results-heading">
+        <div>
+          <p class="eyebrow">INTENTO FINALIZADO</p>
+          <h2 id="results-title">Resultado final</h2>
+          <p class="muted">Las preguntas abiertas no alteran la calificación automática.</p>
+        </div>
+        <div id="score-ring" class="score-ring"><strong id="score-percent">0%</strong><span>calificación</span></div>
+      </div>
+      <div id="result-metrics" class="result-metrics"></div>
+
+      <div class="result-grid">
+        <section>
+          <h3>Desempeño por tipo</h3>
+          <div class="table-wrap"><table><thead><tr><th>Tipo</th><th>Correctas</th><th>Incorrectas</th><th>Omitidas</th></tr></thead><tbody id="type-performance"></tbody></table></div>
+        </section>
+        <section>
+          <h3>Desempeño por tema</h3>
+          <div class="table-wrap"><table><thead><tr><th>Tema</th><th>Correctas</th><th>Incorrectas</th><th>Omitidas</th></tr></thead><tbody id="topic-performance"></tbody></table></div>
+        </section>
+      </div>
+
+      <section class="review-section">
+        <h3>Preguntas que debo repasar</h3>
+        <div id="review-list"></div>
+      </section>
+      <div class="button-row">
+        <button id="review-errors-button" class="button primary" type="button">Repasar errores</button>
+        <button id="new-practice-button" class="button secondary" type="button">Nueva práctica</button>
+      </div>
+    </section>
+  </main>
+
+  <noscript>Este simulador necesita JavaScript habilitado.</noscript>
+  <script src="questions.js"></script>
+  <script src="engine.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
