@@ -1,0 +1,22 @@
+# Dependencies and local build output
+node_modules/
+dist/
+
+# Test and review output
+test-results/
+playwright-report/
+
+# Python
+__pycache__/
+*.pyc
+
+# Secrets and local config
+.env
+.env.*
+*.pem
+*.key
+
+# OS / editor noise
+.DS_Store
+Thumbs.db
+.vscode/settings.json

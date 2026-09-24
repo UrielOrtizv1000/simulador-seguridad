@@ -1,0 +1,14 @@
+{
+  "name": "simulador-examen-seguridad",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Offline practice exam for a cybersecurity course, built from the study material.",
+  "scripts": {
+    "test": "node --test tests/engine.test.mjs",
+    "test:e2e": "playwright test",
+    "smoke": "node tools/live-check.mjs"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.63.0"
+  }
+}
