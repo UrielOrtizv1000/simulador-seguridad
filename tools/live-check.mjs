@@ -36,10 +36,16 @@ try {
   const counter = (await page.textContent("#question-counter")).trim();
   if (!/^Pregunta 1 de \d+$/.test(counter)) problems.push(`unexpected counter: ${counter}`);
 
-  await page.locator('input[name="answer"]').first().check();
+  // The first question of a full exam is whichever one the shuffle put there,
+  // so answer it the way its own type expects.
+  const objective = await page.locator('input[name="answer"]').count();
+  if (objective > 0) {
+    await page.locator('input[name="answer"]').first().check();
+  } else {
+    await page.locator("#open-answer").fill("Respuesta de prueba");
+  }
   await page.getByRole("button", { name: /Responder|Mostrar respuesta esperada/ }).click();
   await page.waitForSelector("#feedback:not([hidden])", { timeout: 15_000 });
-
   const feedback = (await page.textContent("#feedback")).trim();
   if (!feedback) problems.push("feedback stayed empty after answering");
   if (!feedback.includes("Fuente de estudio")) problems.push("feedback is missing the study source");
