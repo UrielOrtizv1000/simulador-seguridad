@@ -1,140 +1,116 @@
-<!doctype html>
-<html lang="es" data-theme="dark">
+<!DOCTYPE html>
+<!--
+  index.html
+  Punto de entrada del Simulador de Seguridad. Solo contiene el esqueleto de las tres
+  pantallas (inicio, examen, resultados); todo el contenido se llena por JavaScript.
+  Carga primero preguntas.js (datos) y luego app.js (lógica), en ese orden.
+-->
+<html lang="es">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="color-scheme" content="dark light">
-  <title>Simulador de Examen — Seguridad</title>
-  <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Simulador de Seguridad</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/estilos.css">
 </head>
 <body>
-  <header class="site-header">
-    <div>
-      <p class="eyebrow">SEGURIDAD DE LA INFORMACIÓN</p>
-      <h1>Simulador de Examen — Seguridad</h1>
+
+<div class="app">
+
+  <!-- Pantalla de inicio: presentación, temas y botón para comenzar -->
+  <section id="screen-start">
+    <div class="hero">
+      <div class="eyebrow">Seguridad en Sistemas de Cómputo</div>
+      <h1>Simulador de Seguridad</h1>
+      <p class="lead">Examen de práctica con retroalimentación inmediata en cada pregunta. Cubre los siete temas de la materia, y al final puedes reintentar solo lo que hayas fallado hasta dominarlo.</p>
+
+      <div class="fact-row">
+        <div class="fact"><div class="num">45</div><div class="lbl">preguntas</div></div>
+        <div class="fact"><div class="num">90:00</div><div class="lbl">minutos</div></div>
+        <div class="fact"><div class="num">7</div><div class="lbl">temas</div></div>
+      </div>
+
+      <div class="topics" id="topic-chips"></div>
+
+      <button class="start-btn" id="btn-start">Iniciar examen</button>
+      <div class="start-note">El temporizador inicia en cuanto presiones el botón.</div>
+
+      <div class="rules">
+        <h3>Cómo funciona</h3>
+        <ul>
+          <li>En cuanto respondas una pregunta, te dice al instante si acertaste, cuál era la respuesta correcta y una breve explicación. Después la pregunta queda bloqueada.</li>
+          <li>En las preguntas de Conectar, toca un término de la izquierda y luego su concepto en la derecha para unirlos; puedes cambiar una unión antes de comprobar.</li>
+          <li>Las preguntas abiertas muestran una respuesta modelo para que marques si la sabías o no.</li>
+          <li>Al terminar verás tu porcentaje total, el desglose por tema y un botón para reintentar solo las que fallaste, las veces que necesites.</li>
+        </ul>
+      </div>
     </div>
-    <button id="theme-toggle" class="button ghost" type="button" aria-label="Cambiar tema">Modo claro</button>
-  </header>
+  </section>
 
-  <main>
-    <section id="start-view" class="view" aria-labelledby="start-title">
-      <div class="intro-line">
-        <div>
-          <h2 id="start-title">Banco de estudio</h2>
-          <p id="bank-summary" class="muted">Cargando preguntas…</p>
-        </div>
-        <div id="type-counts" class="metric-strip" aria-label="Conteo por tipo"></div>
+  <!-- Pantalla de examen: barra superior, mapa de preguntas y la pregunta actual -->
+  <section id="screen-exam" hidden>
+    <div style="display:flex; flex-direction:column; gap:12px;">
+      <div class="topbar">
+        <div class="timer mono" id="timer">90:00</div>
+        <span class="mode-pill" id="mode-pill" hidden>Reintento</span>
+        <div class="progress-txt" id="progress-txt">Pregunta 1 / 45</div>
+        <button class="finish-btn-top" id="btn-finish-top">Finalizar</button>
       </div>
 
-      <div class="setup-grid">
-        <form id="setup-form" class="setup-panel">
-          <fieldset>
-            <legend>Modalidad</legend>
-            <label class="mode-option"><input type="radio" name="mode" value="complete" checked><span><strong>Examen completo</strong><small>Todo el banco, todos los temas.</small></span></label>
-            <label class="mode-option"><input type="radio" name="mode" value="random"><span><strong>Práctica aleatoria</strong><small>Una selección nueva en cada intento.</small></span></label>
-            <label class="mode-option"><input type="radio" name="mode" value="type"><span><strong>Por tipo</strong><small>Opción múltiple, verdadero/falso o abiertas.</small></span></label>
-            <label class="mode-option"><input type="radio" name="mode" value="topic"><span><strong>Por tema</strong><small>Concentra la práctica en una unidad.</small></span></label>
-            <label class="mode-option"><input type="radio" name="mode" value="errors"><span><strong>Preguntas por repasar</strong><small id="wrong-mode-help">Sin errores guardados.</small></span></label>
-            <label class="mode-option"><input type="radio" name="mode" value="favorites"><span><strong>Favoritas</strong><small id="favorite-mode-help">Sin favoritas guardadas.</small></span></label>
-          </fieldset>
-
-          <div id="random-controls" class="conditional-controls" hidden>
-            <label for="random-count">Número de preguntas</label>
-            <input id="random-count" type="number" min="1" value="20">
-          </div>
-          <div id="type-controls" class="conditional-controls" hidden>
-            <label for="type-select">Tipo de pregunta</label>
-            <select id="type-select">
-              <option value="multiple">Opción múltiple</option>
-              <option value="true_false">Verdadero o falso</option>
-              <option value="open">Pregunta abierta</option>
-            </select>
-          </div>
-          <div id="topic-controls" class="conditional-controls" hidden>
-            <label for="topic-select">Tema</label>
-            <select id="topic-select"></select>
-          </div>
-
-          <p id="setup-error" class="form-error" role="alert" hidden></p>
-          <div class="button-row">
-            <button class="button primary" type="submit">Iniciar práctica</button>
-            <button id="resume-button" class="button secondary" type="button" hidden>Continuar progreso</button>
-          </div>
-        </form>
-
-        <aside class="session-panel" aria-labelledby="session-title">
-          <h3 id="session-title">Estadísticas guardadas</h3>
-          <dl id="lifetime-stats" class="stats-list"></dl>
-          <button id="clear-progress" class="text-button danger" type="button">Borrar progreso y estadísticas</button>
-        </aside>
-      </div>
-    </section>
-
-    <section id="exam-view" class="view" hidden aria-live="polite">
-      <div class="exam-toolbar">
-        <div>
-          <p id="question-counter" class="eyebrow"></p>
-          <div class="progress-track" role="progressbar" aria-label="Progreso del examen" aria-valuemin="0" aria-valuemax="100"><span id="progress-bar"></span></div>
-        </div>
-        <div class="live-score"><span id="live-correct">0</span> aciertos · <span id="live-answered">0</span> respondidas</div>
+      <div class="palette-wrap">
+        <button class="palette-toggle" id="palette-toggle" aria-expanded="false" aria-controls="palette-grid">
+          <span>Mapa de preguntas</span>
+          <span class="chev">▾</span>
+        </button>
+        <div class="palette-grid" id="palette-grid" hidden></div>
       </div>
 
-      <article class="question-panel">
-        <div class="question-meta">
-          <span id="question-type" class="tag"></span>
-          <span id="question-difficulty" class="tag"></span>
-          <span id="question-topic" class="topic-label"></span>
-        </div>
-        <h2 id="question-text"></h2>
-        <div id="answer-area"></div>
-        <div id="feedback" class="feedback" hidden></div>
-        <div class="question-actions">
-          <button id="previous-button" class="button secondary" type="button">Anterior</button>
-          <button id="favorite-button" class="button ghost" type="button" aria-pressed="false">Marcar favorita</button>
-          <span class="action-spacer"></span>
-          <button id="submit-button" class="button primary" type="button">Responder</button>
-          <button id="next-button" class="button secondary" type="button">Siguiente</button>
-          <button id="finish-button" class="button danger-button" type="button">Finalizar</button>
-        </div>
-      </article>
-    </section>
+      <div class="qcard" id="qcard"></div>
 
-    <section id="results-view" class="view" hidden aria-labelledby="results-title">
-      <div class="results-heading">
-        <div>
-          <p class="eyebrow">INTENTO FINALIZADO</p>
-          <h2 id="results-title">Resultado final</h2>
-          <p class="muted">Las preguntas abiertas no alteran la calificación automática.</p>
-        </div>
-        <div id="score-ring" class="score-ring"><strong id="score-percent">0%</strong><span>calificación</span></div>
+      <div class="navrow">
+        <button class="navbtn" id="btn-prev">← Anterior</button>
+        <button class="navbtn ghost" id="btn-skip">Saltar pregunta →</button>
       </div>
-      <div id="result-metrics" class="result-metrics"></div>
+    </div>
+  </section>
 
-      <div class="result-grid">
-        <section>
-          <h3>Desempeño por tipo</h3>
-          <div class="table-wrap"><table><thead><tr><th>Tipo</th><th>Correctas</th><th>Incorrectas</th><th>Omitidas</th></tr></thead><tbody id="type-performance"></tbody></table></div>
-        </section>
-        <section>
-          <h3>Desempeño por tema</h3>
-          <div class="table-wrap"><table><thead><tr><th>Tema</th><th>Correctas</th><th>Incorrectas</th><th>Omitidas</th></tr></thead><tbody id="topic-performance"></tbody></table></div>
-        </section>
+  <!-- Pantalla de resultados: puntaje, reintento de falladas, desglose y revisión -->
+  <section id="screen-results" hidden>
+    <div style="display:flex; flex-direction:column; gap:16px;">
+      <div class="retry-banner" id="retry-banner" hidden></div>
+
+      <div class="score-hero">
+        <div class="eyebrow">Resultado</div>
+        <div class="score-big" id="score-big">0%</div>
+        <div class="score-msg" id="score-msg"></div>
+        <div class="score-sub" id="score-sub"></div>
       </div>
 
-      <section class="review-section">
-        <h3>Preguntas que debo repasar</h3>
-        <div id="review-list"></div>
-      </section>
-      <div class="button-row">
-        <button id="review-errors-button" class="button primary" type="button">Repasar errores</button>
-        <button id="new-practice-button" class="button secondary" type="button">Nueva práctica</button>
-      </div>
-    </section>
-  </main>
+      <div id="retry-cta-wrap"></div>
 
-  <noscript>Este simulador necesita JavaScript habilitado.</noscript>
-  <script src="questions.js"></script>
-  <script src="engine.js"></script>
-  <script src="app.js"></script>
+      <div class="bars">
+        <h3>Desglose por tema</h3>
+        <div id="bars-list"></div>
+      </div>
+
+      <div class="review-toolbar">
+        <button class="toolbtn" id="btn-restart">Reiniciar examen completo</button>
+      </div>
+
+      <div class="review-group" id="review-list"></div>
+
+      <div class="review-toolbar">
+        <button class="toolbtn" id="btn-restart-2">Reiniciar examen completo</button>
+      </div>
+    </div>
+  </section>
+
+  <footer class="appfoot">Simulador de práctica · Seguridad en Sistemas de Cómputo</footer>
+</div>
+
+<script src="js/preguntas.js"></script>
+<script src="js/app.js"></script>
 </body>
 </html>

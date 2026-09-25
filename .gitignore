@@ -1,22 +1,17 @@
-# Dependencies and local build output
-node_modules/
-dist/
-
-# Test and review output
-test-results/
-playwright-report/
-
-# Python
-__pycache__/
-*.pyc
-
-# Secrets and local config
-.env
-.env.*
-*.pem
-*.key
-
-# OS / editor noise
+# Sistema operativo
 .DS_Store
 Thumbs.db
-.vscode/settings.json
+desktop.ini
+
+# Editores / IDEs
+.vscode/
+.idea/
+*.swp
+
+# Por si en el futuro se agrega alguna herramienta con Node.js
+node_modules/
+npm-debug.log*
+
+# Material de estudio original (no debe subirse al repositorio)
+*.pdf
+guia.md
