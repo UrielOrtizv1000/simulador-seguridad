@@ -23,15 +23,17 @@ jobs:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
-      # There is no build step, but only the files the page actually fetches are
-      # published: tests, tooling and repository docs stay out of the artifact.
+      # The app is plain files with no build step, but only the ones the browser
+      # actually fetches are published: the repository docs stay out of the
+      # artifact that gets served.
       - name: Checkout
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
 
       - name: Stage site
         run: |
           mkdir -p dist
-          cp index.html styles.css app.js engine.js questions.js dist/
+          cp index.html dist/
+          cp -r css js dist/
 
       - name: Upload site
         uses: actions/upload-pages-artifact@fc324d3547104276b827a68afc52ff2a11cc49c9 # v5.0.0

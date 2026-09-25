@@ -1,10 +1,10 @@
 # Security Policy
 
-This project is a static study tool. There is no backend, no account and no
-telemetry: the page and its question bank are plain files served from wherever
-you host them. Everything the exam stores — progress, wrong answers, favourites
-and statistics — stays in the visitor's own browser under
-`localStorage["securityExamSimulator.v1"]`.
+This project is a static study tool: plain HTML, CSS and JavaScript with no
+backend, no accounts and no telemetry. The page and the question bank are served
+as files from wherever you host them, and the exam state — progress, score and
+pending questions — lives only in memory for the duration of the attempt. Nothing
+is stored and nothing is sent anywhere.
 
 ## Reporting a vulnerability
 
@@ -17,9 +17,9 @@ on `main` as they are ready rather than on a scheduled release train.
 
 ## Scope
 
-Relevant: cross-site scripting through the question bank or the answer rendering
-code, a GitHub Actions workflow that a fork could abuse, or a dependency that
-ships something unexpected. Not relevant: the wording or the accuracy of the
-questions themselves (open an issue instead), or the fact that the whole bank is
-readable in `questions.js` — a study tool that hides its own answers is not much
-of a study tool.
+Relevant: cross-site scripting through question content or the answer rendering
+code, a GitHub Actions workflow that a fork could abuse, and third-party assets
+the page loads (currently the IBM Plex families from Google Fonts). Not relevant:
+the wording or the accuracy of the questions themselves — open an issue instead —
+or the fact that the whole bank is readable in `js/preguntas.js`, which is how a
+study tool is supposed to work.

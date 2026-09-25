@@ -1,20 +1,10 @@
 version: 2
 updates:
-  - package-ecosystem: npm
-    directory: /
-    schedule:
-      interval: weekly
-    # One PR for all minor and patch bumps instead of a dozen separate ones.
-    groups:
-      npm-minor-patch:
-        patterns: ["*"]
-        update-types: ["minor", "patch"]
-    open-pull-requests-limit: 5
-
   - package-ecosystem: github-actions
     directory: /
     schedule:
       interval: weekly
+    # One PR for the workflow actions instead of one per action.
     groups:
       actions:
         patterns: ["*"]
