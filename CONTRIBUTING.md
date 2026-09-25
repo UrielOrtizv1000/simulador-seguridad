@@ -1,33 +1,29 @@
 # Contributing
 
-The interesting part of this repo is the question bank, and it is generated: the
-editable input is the per-file analysis in `tools/source-analysis/`, one JSON per
-study document, and `tools/build_bank.py` turns those into `data/questions.json`
-plus the `questions.js` the page loads.
+All the exam content lives in `js/preguntas.js`, in two pieces: `TOPICS` describes
+the seven themes of the course, and `QUESTION_BANK` holds the questions. The engine
+in `js/app.js` reads both at runtime, so adding, editing or removing questions of
+an existing type needs no change to the logic at all.
 
-## Adding or fixing questions
+## Adding or editing a question
 
-1. Edit the analysis file for the document you are working from. Every question
-   needs a `topic`, a `prompt`, an `explanation` and a real `source_file` that
-   matches one of the PDFs listed at the top of `tools/build_bank.py`.
-2. If the question comes from a multiple-select, matching or ordering exercise
-   in the source, keep the full answer in `expected_answer` or `key_points`. These
-   become open questions, and a rubric that only says "distinguish correctly" is
-   useless for studying.
-3. Run the generator. It validates types, correct-answer indexes, duplicate
-   options, difficulty values, traceability and the presence of a real expected
-   answer, and it refuses to write anything if a question fails:
+1. Add the object to `QUESTION_BANK` with a unique `id`, a `topic` that already
+   exists in `TOPICS`, the right `type`, and an `explain` line that says why the
+   answer is the answer. Open questions carry a `model` answer instead.
+2. Follow the shape of the type you are writing — `options` plus `answerIndex` for
+   `mc`, `answer` for `vf`, `answers` for `fill`, `pairs` for `match` and `connect`,
+   `slots` plus `pool` for `diagram`. The README documents each one with an example.
+3. Keep the answer inside the question. A distractor is fine; a second correct
+   option is not, and neither is a `diagram` whose `pool` has no possible solution.
+4. Reload `index.html` and walk the question once, both answering it right and
+   answering it wrong: the feedback, the locked state and the topic breakdown are
+   the parts a bad edit breaks.
 
-   ```bash
-   python tools/build_bank.py
-   ```
-
-4. Corrections that override generated text live in `AUDIT_OVERRIDES` keyed by
-   source file plus exact prompt, so they survive reordering. Do not reach for the
-   ordinal `Q###` ids.
+Adding a new question type does mean touching `js/app.js`, since each type is
+rendered and graded separately.
 
 ## Everything else
 
 Keep the code and the docs in English and the exam itself in Spanish — the
-questions are for a Spanish-taught course. Run the checks in the README before
-opening a pull request, and work on a branch: `main` is protected.
+questions and their explanations are for a Spanish-taught course. Work on a
+branch and open a pull request: `main` is protected.
